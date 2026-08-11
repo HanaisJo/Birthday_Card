@@ -1,24 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday!</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="card-container">
-    <div class="card">
-      <div class="front">
-        <h1>🎉 Happy Birthday! 🎉</h1>
-        <p>Click or hover to open</p>
-      </div>
-      <div class="back">
-        <h2>To [Friend's Name],</h2>
-        <p>Wishing you an incredible year ahead filled with success, laughter, and great adventures!</p>
-        <p class="signature">Best, <br>[Your Name]</p>
-      </div>
+<div class="back">
+  <h2>To [Friend's Name],</h2>
+  <p>Wishing you an incredible year ahead filled with joy and success!</p>
+  
+  <!-- Photo Gallery Grid with Click Events -->
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="photo1.jpg" alt="Memory 1" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="photo2.jpg" alt="Memory 2" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="photo3.jpg" alt="Memory 3" onclick="openLightbox(this)">
+    </div>
+    <div class="gallery-item">
+      <img src="photo4.jpg" alt="Memory 4" onclick="openLightbox(this)">
     </div>
   </div>
-</body>
-</html>
+
+  <p class="signature">Best, <br>[Your Name]</p>
+</div>
+
+<!-- Modal Lightbox Preview -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <span class="close-btn">&times;</span>
+  <img id="lightbox-img" src="" alt="Expanded preview">
+</div>
+
+<script src="script.js"></script>
