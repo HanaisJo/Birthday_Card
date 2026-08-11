@@ -1,60 +1,57 @@
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f4effa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.card-container {
-  perspective: 1000px;
-}
-
-.card {
-  width: 300px;
-  height: 400px;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease;
+/* Gallery Image Pointer */
+.gallery-item img {
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  border-radius: 12px;
 }
 
-.card-container:hover .card {
-  transform: rotateY(180deg);
-}
-
-.front, .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
+/* Lightbox Background Overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.25s ease-out;
 }
 
-.front {
-  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-  color: #333;
+.lightbox.active {
+  display: flex;
 }
 
-.back {
-  background-color: #ffffff;
-  color: #333;
-  transform: rotateY(180deg);
-  line-height: 1.6;
+/* Modal Image Styling */
+.lightbox img {
+  max-width: 85vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  transform: scale(0.9);
+  animation: zoomIn 0.25s ease-out forwards;
 }
 
-.signature {
-  margin-top: 20px;
+/* Close Button (X) */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #ffffff;
+  font-size: 36px;
   font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.85); }
+  to { transform: scale(1); }
 }
