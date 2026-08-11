@@ -21,10 +21,13 @@
   <p class="signature">Best, <br>[Your Name]</p>
 </div>
 
-<!-- Modal Lightbox Preview -->
+<!-- Modal Lightbox Preview with Navigation -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
   <span class="close-btn">&times;</span>
+  
+  <button class="nav-btn prev-btn" onclick="changeImage(-1, event)">&#10094;</button>
   <img id="lightbox-img" src="" alt="Expanded preview">
+  <button class="nav-btn next-btn" onclick="changeImage(1, event)">&#10095;</button>
 </div>
 
 <script src="script.js"></script>
