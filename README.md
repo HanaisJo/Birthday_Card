@@ -1,1 +1,1 @@
-https://hanaisjo.github.io/Birthday_Card/
+www.happybirthdayjanny.com
