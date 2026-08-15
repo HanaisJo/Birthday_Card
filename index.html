@@ -1,33 +1,64 @@
-<div class="back">
-  <h2>To [Friend's Name],</h2>
-  <p>Wishing you an incredible year ahead filled with joy and success!</p>
-  
-  <!-- Photo Gallery Grid with Click Events -->
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="photo1.jpg" alt="Memory 1" onclick="openLightbox(this)">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loader" class="loader">
+        <canvas id="gold-dust"></canvas>
+        <div class="loader-content">
+            <button id="play" class="start-btn">Open Celebration</button>
+        </div>
     </div>
-    <div class="gallery-item">
-      <img src="photo2.jpg" alt="Memory 2" onclick="openLightbox(this)">
-    </div>
-    <div class="gallery-item">
-      <img src="photo3.jpg" alt="Memory 3" onclick="openLightbox(this)">
-    </div>
-    <div class="gallery-item">
-      <img src="photo4.jpg" alt="Memory 4" onclick="openLightbox(this)">
-    </div>
-  </div>
 
-  <p class="signature">Best, <br>[Your Name]</p>
-</div>
+    <main id="main" class="main-content" style="display: none;">
+        <canvas id="confetti"></canvas>
+        
+        <div class="container">
+            <div class="content-wrapper">
+                <header>
+                    <h1 id="name" class="recipient-name">Friend</h1>
+                </header>
 
-<!-- Modal Lightbox Preview with Navigation -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-  <span class="close-btn">&times;</span>
-  
-  <button class="nav-btn prev-btn" onclick="changeImage(-1, event)">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded preview">
-  <button class="nav-btn next-btn" onclick="changeImage(1, event)">&#10095;</button>
-</div>
+                <div class="typing-container">
+                    <div id="typed-strings">
+                        <p>Happy Birthday!</p>
+                        <p>Have a wonderful day...</p>
+                        <p>Filled with joy and happiness.</p>
+                    </div>
+                    <span id="typed"></span>
+                </div>
 
-<script src="script.js"></script>
+                <div class="visuals">
+                    <svg class="cake-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="50" width="60" height="30" rx="5" fill="#D4AF37" opacity="0.8"/>
+                        <rect x="30" y="30" width="40" height="20" rx="5" fill="#D4AF37"/>
+                        <rect x="48" y="15" width="4" height="15" fill="#333"/>
+                        <circle cx="50" cy="10" r="3" fill="#FFD700">
+                            <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+                        </circle>
+                    </svg>
+                </div>
+
+                <footer>
+                    <a href="letter.html" class="letter-btn">Read My Message</a>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <audio id="song" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
